@@ -1,5 +1,10 @@
-browser.browserAction.onClicked.addListener(sendMessage);
+browser.browserAction.onClicked.addListener(requestImageLinks);
+browser.runtime.onMessage.addListener(downloadImages);
 
-function sendMessage(tab){
+function requestImageLinks(tab) {
     browser.tabs.sendMessage(tab.id,"run")
+};
+
+function downloadImages(linkList) {
+    console.log(linkList)
 };

@@ -1,9 +1,13 @@
-browser.runtime.onMessage.addListener(mainAction);
+browser.runtime.onMessage.addListener(getImageLinks);
 
-function downloadImages() {
+function getImageLinks() {
     const elementList = document.querySelectorAll(".fileText");
-}
-
-function mainAction() {
-    browser.downloads.showDefaultFolder();
-}
+    const linkList = [];
+    elementList.forEach(element => {
+        const imageLink = element.children[0]; 
+        const linkObject = {}; 
+        linkObject[imageLink.innerText] = imageLink.href;
+        linkList.push(linkObject);
+    });
+    browser.runtime.sendMessage(linkList);
+};
