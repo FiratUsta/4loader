@@ -27,7 +27,7 @@
     ],
   
     "background": {
-      "scripts": ["4loader-browserAction.js"]
+      "scripts": ["background.js"]
     }
   }
   
