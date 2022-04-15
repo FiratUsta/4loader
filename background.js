@@ -16,7 +16,7 @@ function downloadMedia(linkList) {
     });
 }
 
-async function loadSettings()  {
+function loadSettings()  {
     let storedTypes = await browser.storage.local.get("allowedTypes");
     if(storedTypes != undefined){
         allowedTypes = storedTypes;
