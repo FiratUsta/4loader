@@ -11,7 +11,8 @@
   
     "permissions": [
       "activeTab",
-      "downloads"
+      "downloads",
+      "storage"
     ],
   
     "browser_action": {
