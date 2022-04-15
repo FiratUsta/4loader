@@ -1,0 +1,93 @@
+/* CSS RESET */
+*, *::before *::after{
+    box-sizing:border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+input, textarea, select, label {
+    font: inherit;
+}
+
+/* STYLE START */
+:root {
+    --background: white;
+    --foreground: black;
+    --accent-one: red;
+    --accent-two: yellow;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    user-select: none;
+    background-color: #ffffee;
+    color: #800000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+    width: 80%;
+    align-self: center;
+    margin: 10px;
+    color: #00000025;
+}
+
+p {
+    margin-bottom: 10px;
+    align-self: center;
+    font-weight: bold;
+}
+
+label {
+    grid-area: label;
+}
+
+input[type="button"] {
+    background-color: #ffffee;
+    color: #800000;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    color: red;
+}
+
+/* IDs */
+#pathInput {
+    width: 80%;
+    align-self: center;
+    border: 1px solid #00000050;
+}
+
+#pathInput:focus {
+    outline: none;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#typeOptions {
+    width: 80%;
+    align-self: center;
+}
+/* CLASSES */
+.opt {
+    display: grid;
+    grid-template-columns: 10% 88%;
+    grid-template-areas: "box label";
+    gap: 2%;
+    margin-bottom: 5px;
+}
