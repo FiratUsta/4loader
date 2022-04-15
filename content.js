@@ -9,7 +9,7 @@ function getImageLinks() {
         linkList.push(linkObject);
     });
     browser.runtime.sendMessage(linkList);
-};
+}
 
 function createDownloadButton (){
     // Create the download button div
@@ -34,6 +34,6 @@ function createDownloadButton (){
     div.onclick = () => getImageLinks();
     // Inject the button
     document.body.appendChild(div);
-};
+}
 
 createDownloadButton();

@@ -1,14 +1,30 @@
-browser.browserAction.onClicked.addListener(requestImageLinks);
-browser.runtime.onMessage.addListener(downloadImages);
+browser.runtime.onMessage.addListener(downloadMedia);
+browser.storage.onChanged.addListener(loadSettings);
 
-function requestImageLinks(tab) {
-    browser.tabs.sendMessage(tab.id,"run")
-};
+let allowedTypes = ["jpg","jpeg","png","gif","webm"]
+let downloadDir = "4loader/";
 
-function downloadImages(linkList) {
+function downloadMedia(linkList) {
     linkList.forEach(link => {
-        link["filename"] = "4loader/" + link["filename"];
-        link["conflictAction"] = "uniquify";
-        browser.downloads.download(link);
+        const fnameArray = link["filename"].split(".");
+        const type = fnameArray[fnameArray.length - 1];
+        if(allowedTypes.includes(type)){
+            link["filename"] = downloadDir + link["filename"];
+            link["conflictAction"] = "uniquify";
+            browser.downloads.download(link);
+        };
     });
-};
+}
+
+async function loadSettings()  {
+    let storedTypes = await browser.storage.local.get("allowedTypes");
+    if(storedTypes != undefined){
+        allowedTypes = storedTypes;
+    };
+    let storedDir = await browser.storage.local.get("downloadDir");
+    if(storedDir != undefined){
+        downloadDir = storedDir;
+    };
+}
+
+loadSettings();
