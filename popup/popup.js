@@ -16,7 +16,17 @@ jpgCheckbox.onchange = () => {typeCheck(jpgCheckbox, ["jpg", "jpeg"]); saveSetti
 pngCheckbox.onchange = () => {typeCheck(pngCheckbox, ["png"]); saveSetting("allowedTypes", allowedTypes)};
 gifCheckbox.onchange = () => {typeCheck(gifCheckbox, ["gif"]); saveSetting("allowedTypes", allowedTypes)};
 webmCheckbox.onchange = () => {typeCheck(webmCheckbox, ["webm"]); saveSetting("allowedTypes", allowedTypes)};
-downloadButton.onclick = () => browser.tabs.sendMessage("run");
+downloadButton.onclick = () => startDownload();
+
+function startDownload() {
+    browser.tabs.query({
+        currentWindow: true,
+        active: true
+      }).then(messageSender);
+    window.close();
+};
+
+function messageSender(tabs) {for(let tab of tabs){browser.tabs.sendMessage(tab.id, "run")};}
 
 function typeCheck(element, types) {
     if(element.checked){
