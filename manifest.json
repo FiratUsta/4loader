@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "4zip",
+    "name": "4loader",
     "version": "1.0",
   
-    "description": "Zips and downloads all images in a 4chan thread.",
+    "description": "Download media from 4chan threads.",
   
     "icons": {
       "48": "icons/icon.png"
@@ -16,7 +16,7 @@
   
     "browser_action": {
       "default_icon": "icons/icon.png",
-      "default_title": "4zip"
+      "default_title": "4loader"
     },
   
     "content_scripts": [
