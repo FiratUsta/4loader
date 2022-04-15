@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+</head>
+<body>
+    <img src="assets/logo.svg" alt="4loader" id="logo">
+    <hr>
+    <p>Download path:</p>
+    <input type="text" name="Download Path" id="pathInput">
+    <hr>
+    <p>Download types:</p>
+    <div id="typeOptions">
+        <div class="opt">
+            <label for="JPG">jpg / jpeg</label>
+            <input type="checkbox" name="JPG" id="jpgCheckbox">
+        </div>
+        <div class="opt">
+            <label for="PNG">png</label>
+            <input type="checkbox" name="PNG" id="pngCheckbox">
+        </div>
+        <div class="opt">
+            <label for="GIF">gif</label>
+            <input type="checkbox" name="GIF" id="gifCheckbox">    
+        </div>
+        <div class="opt">
+            <label for="WEBM">webm</label>
+            <input type="checkbox" name="WEBM" id="webmCheckbox">    
+        </div>
+    </div>
+    <hr>
+    <div id="buttons">
+        <input type="button" value="Help" id="helpButton">
+        <input type="button" value="Source" id="sourceButton">
+    </div>
+</body>
+</html>

@@ -16,7 +16,8 @@
   
     "browser_action": {
       "default_icon": "icons/icon.png",
-      "default_title": "4loader"
+      "default_title": "4loader",
+      "default_popup": "popup/popup.html"
     },
   
     "content_scripts": [
