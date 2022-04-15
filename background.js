@@ -6,5 +6,8 @@ function requestImageLinks(tab) {
 };
 
 function downloadImages(linkList) {
-    console.log(linkList)
+    linkList.forEach(link => {
+        link["conflictAction"] = "uniquify";
+        browser.downloads.download(link);
+    });
 };

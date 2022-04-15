@@ -6,7 +6,8 @@ function getImageLinks() {
     elementList.forEach(element => {
         const imageLink = element.children[0]; 
         const linkObject = {}; 
-        linkObject[imageLink.innerText] = imageLink.href;
+        linkObject["filename"] = imageLink.innerText;
+        linkObject["url"] = imageLink.href;
         linkList.push(linkObject);
     });
     browser.runtime.sendMessage(linkList);
