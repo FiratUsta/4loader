@@ -2,11 +2,15 @@
     "manifest_version": 2,
     "name": "4loader",
     "version": "1.0",
+    "default_locale": "en",
+    "author": "Fırat Usta",
+    "homepage_url": "https://github.com/KazaKazan/4loader",
   
-    "description": "Download media from 4chan threads.",
+    "description": "Automatically download all media from 4chan threads. Can choose which type of files to download as well as choose a directory to download.",
   
     "icons": {
-      "48": "icons/icon.png"
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
     },
   
     "permissions": [
@@ -16,7 +20,7 @@
     ],
   
     "browser_action": {
-      "default_icon": "icons/icon.png",
+      "default_icon": "icons/icon.svg",
       "default_title": "4loader",
       "default_popup": "popup/popup.html"
     },
