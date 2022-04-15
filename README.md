@@ -9,7 +9,7 @@
 
 <h2> Usage</h2>
 
-- Download and install the extension either manually or ~through the Firefox extensions page~ (Currently not available.)
+- Download and install the extension either manually or [through the Firefox extensions page](https://addons.mozilla.org/en-US/firefox/addon/4loader/).
 - Click on the extension icon.
 - Set your download path.
   - The default path is `4loader/`, with this the extension will create a directory called '4loader' in your default downloads directory. This value can be changed, but it is always relative to the default downloads directory and cannot be pointed out of it.
