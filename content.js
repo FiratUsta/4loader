@@ -1,5 +1,3 @@
-//browser.runtime.onMessage.addListener(getImageLinks);
-
 function getImageLinks() {
     const elementList = document.querySelectorAll(".fileText");
     const linkList = [];

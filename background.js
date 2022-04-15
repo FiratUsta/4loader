@@ -7,6 +7,7 @@ function requestImageLinks(tab) {
 
 function downloadImages(linkList) {
     linkList.forEach(link => {
+        link["filename"] = "4loader/" + link["filename"];
         link["conflictAction"] = "uniquify";
         browser.downloads.download(link);
     });
