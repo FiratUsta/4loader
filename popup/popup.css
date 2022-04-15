@@ -18,13 +18,6 @@ input, textarea, select, label {
 }
 
 /* STYLE START */
-:root {
-    --background: white;
-    --foreground: black;
-    --accent-one: red;
-    --accent-two: yellow;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -63,6 +56,22 @@ a:hover {
 }
 
 /* IDs */
+#logoContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#icon{
+    height: 24px;
+}
+
+#logoTitle{
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
 #pathInput {
     width: 80%;
     align-self: center;
@@ -89,4 +98,5 @@ a:hover {
     grid-template-areas: "box label";
     gap: 2%;
     margin-bottom: 5px;
+    accent-color: #800000;
 }
