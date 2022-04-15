@@ -1,7 +1,7 @@
 browser.runtime.onMessage.addListener(downloadMedia);
 browser.storage.onChanged.addListener(loadSettings);
 
-let allowedTypes = ["jpg","jpeg","png","gif","webm"]
+let allowedTypes = ["jpg","jpeg","png","gif","webm"];
 let downloadDir = "4loader/";
 
 function downloadMedia(linkList) {
@@ -16,14 +16,14 @@ function downloadMedia(linkList) {
     });
 }
 
-function loadSettings()  {
+async function loadSettings() {
     let storedTypes = await browser.storage.local.get("allowedTypes");
     if(storedTypes != undefined){
-        allowedTypes = storedTypes;
+        allowedTypes = storedTypes["allowedTypes"];
     };
     let storedDir = await browser.storage.local.get("downloadDir");
     if(storedDir != undefined){
-        downloadDir = storedDir;
+        downloadDir = storedDir["downloadDir"];
     };
 }
 
