@@ -2,7 +2,6 @@
     "manifest_version": 2,
     "name": "4loader",
     "version": "1.0",
-    "default_locale": "en",
     "author": "Fırat Usta",
     "homepage_url": "https://github.com/KazaKazan/4loader",
   
