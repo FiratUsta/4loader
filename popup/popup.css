@@ -52,15 +52,14 @@ label {
     grid-area: label;
 }
 
-input[type="button"] {
-    background-color: #ffffee;
+a, a:visited {
     color: #800000;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
 }
 
-input[type="button"]:hover {
+a:hover {
     color: red;
+    text-decoration: none;
 }
 
 /* IDs */
