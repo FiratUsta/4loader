@@ -1,17 +1,22 @@
+// Setting vars
 let allowedTypes = ["jpg", "jpeg", "png", "gif", "webm"];
 let downloadDir = "4loader/";
 
+// DOM vars
 const pathInput = document.getElementById("pathInput");
 const jpgCheckbox = document.getElementById("jpgCheckbox");
 const pngCheckbox = document.getElementById("pngCheckbox");
 const gifCheckbox = document.getElementById("gifCheckbox");
 const webmCheckbox = document.getElementById("webmCheckbox");
+const downloadButton = document.getElementById("downloadButton");
 
+// DOM element functions
 pathInput.onchange = () => saveSetting("downloadDir", pathInput.value);
 jpgCheckbox.onchange = () => {typeCheck(jpgCheckbox, ["jpg", "jpeg"]); saveSetting("allowedTypes", allowedTypes)};
 pngCheckbox.onchange = () => {typeCheck(pngCheckbox, ["png"]); saveSetting("allowedTypes", allowedTypes)};
 gifCheckbox.onchange = () => {typeCheck(gifCheckbox, ["gif"]); saveSetting("allowedTypes", allowedTypes)};
 webmCheckbox.onchange = () => {typeCheck(webmCheckbox, ["webm"]); saveSetting("allowedTypes", allowedTypes)};
+downloadButton.onclick = () => browser.tabs.sendMessage("run");
 
 function typeCheck(element, types) {
     if(element.checked){
